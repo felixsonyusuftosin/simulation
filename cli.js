@@ -99,11 +99,11 @@ const run = async () => {
   
   const stack = new StackBuilder()
   for (let i = 0; i < stackArray.length; i++) {
-    const item = stackArray[i]
-    stack.addToStack(item)
+    const items = stackArray[i]
+    stack.addToStack(items)
   }
   try {
-  const response = stack.pourLiquidAndGetItem(volume, row - 1, index - 1)
+  const response = stack.pourLiquidAndGetCupVolume(volume, row - 1, index - 1)
   console.log(chalk.green(`On the ${row}th row, on index ${index} column the cup will contain ${response} ML of liquid`))
   } catch (err ) {
     console.log(err.message)

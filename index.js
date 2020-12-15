@@ -100,7 +100,7 @@ class StackBuilder {
     prevElement.next = stack(prevElement.row + 1, nextArrayOfGlass)
   }
 
-  pourLiquidAndGetItem(volumePoured, row, index) {
+  pourLiquidAndGetCupVolume(volumePoured, row, index) {
     this._simulatePour(volumePoured * 1000)
     try {
       const glass = this._getGlass(row, index)
