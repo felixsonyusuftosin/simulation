@@ -39,6 +39,7 @@ const stack = (row = 0, arr = []) => ({
 class StackBuilder {
   constructor() {
     this.root = null
+    this.length = 0
   }
 
   _convertArrayToGlass(arr, row) {
@@ -87,6 +88,7 @@ class StackBuilder {
     if (!this.root) {
       const arrayOfGlass = this._convertArrayToGlass(arr, 0)
       this.root = stack(0, arrayOfGlass)
+      this.length = 1
       return
     }
     let prevElement = this.root
@@ -98,6 +100,7 @@ class StackBuilder {
       prevElement.row + 1
     )
     prevElement.next = stack(prevElement.row + 1, nextArrayOfGlass)
+    this.length = this.length + 1
   }
 
   pourLiquidAndGetCupVolume(volumePoured, row, index) {

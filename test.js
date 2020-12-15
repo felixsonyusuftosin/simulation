@@ -23,8 +23,20 @@ describe('Glass', () => {
 })
 
 describe('Stack Builder', () => {
-  beforeEach(() => {
-    
+ 
+  let stack = new StackBuilder()
+
+  describe('addToStack', () => {
+   it('should add to stack', () => { 
+    stack.addToStack([1])
+    stack.addToStack([2,4])
+    stack.addToStack([5,6, 7])
+    expect(stack.length).to.equal(3)
+    expect(stack.root.row).to.equal(0)
+
+   })
+
+
   })
   describe('_convertArrayToGlass', () => {
 
@@ -33,9 +45,6 @@ describe('Stack Builder', () => {
 
   })
   describe('simulatePour', () => {
-
-  })
-  describe('addToStack', () => {
 
   })
   describe('pourLiquidAndGetCupVolume', () => {
