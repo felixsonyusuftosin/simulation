@@ -42,7 +42,13 @@ describe('Stack Builder', () => {
       expect(glasses[2] instanceof Glass).to.be.true
     })
   })
-  describe('getGlass', () => {})
+  describe('getGlass', () => {
+    it ('should get a glass instance ', () => { 
+      const glass = stack._getGlass(1,1)
+      expect(glass.index).to.equal(1)
+      expect(glass.row).to.equal(1)
+    })
+  })
   describe('simulatePour', () => {})
   describe('pourLiquidAndGetCupVolume', () => {})
 })
