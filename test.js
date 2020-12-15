@@ -21,9 +21,9 @@ describe('Glass', () => {
 })
 
 describe('Stack Builder', () => {
-  let stack = new StackBuilder()
+  let stack 
   beforeEach(() => {
-    glass = new Glass(0, 0)
+   stack =  new StackBuilder()
     stack.addToStack([1])
     stack.addToStack([2, 4])
     stack.addToStack([5, 6, 7])
@@ -35,20 +35,32 @@ describe('Stack Builder', () => {
     })
   })
   describe('_convertArrayToGlass', () => {
-    it ('should return an array of glass ', () => { 
-      const glasses = stack._convertArrayToGlass([1,2,3])
+    it('should return an array of glass ', () => {
+      const glasses = stack._convertArrayToGlass([1, 2, 3])
       expect(glasses[0] instanceof Glass).to.be.true
       expect(glasses[1] instanceof Glass).to.be.true
       expect(glasses[2] instanceof Glass).to.be.true
     })
   })
+
   describe('getGlass', () => {
-    it ('should get a glass instance ', () => { 
-      const glass = stack._getGlass(1,1)
+    it('should get a glass instance ', () => {
+      const glass = stack._getGlass(1, 1)
       expect(glass.index).to.equal(1)
       expect(glass.row).to.equal(1)
     })
   })
-  describe('simulatePour', () => {})
-  describe('pourLiquidAndGetCupVolume', () => {})
+  describe('simulatePour', () => {
+    it('should simulate pour', () => {
+      stack._simulatePour(300)
+      const glass = stack._getGlass(1, 0)
+      expect(glass.volume).to.equal(25)
+    })
+  })
+  describe('pourLiquidAndGetCupVolume', () => {
+    it('should return the volume of the liquid in a glass', () => {
+     const volume =  stack.pourLiquidAndGetCupVolume(0.35, 1,1)
+     expect(volume).to.equal(50)
+    })
+  })
 })
