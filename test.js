@@ -21,9 +21,9 @@ describe('Glass', () => {
 })
 
 describe('Stack Builder', () => {
-  let stack 
+  let stack
   beforeEach(() => {
-   stack =  new StackBuilder()
+    stack = new StackBuilder()
     stack.addToStack([1])
     stack.addToStack([2, 4])
     stack.addToStack([5, 6, 7])
@@ -59,8 +59,8 @@ describe('Stack Builder', () => {
   })
   describe('pourLiquidAndGetCupVolume', () => {
     it('should return the volume of the liquid in a glass', () => {
-     const volume =  stack.pourLiquidAndGetCupVolume(0.35, 1,1)
-     expect(volume).to.equal(50)
+      const volume = stack.pourLiquidAndGetCupVolume(0.35, 1, 1)
+      expect(volume).to.equal(50)
     })
   })
 })
