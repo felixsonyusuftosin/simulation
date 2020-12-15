@@ -4,6 +4,7 @@
   - inputs in terms of row and index are not zero based
 
   ### Start 
+  - run npm install 
   #### To start: 
   ##### USE BASH SCRIPT: 
   - run bash simulate.js 
