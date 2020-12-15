@@ -104,7 +104,22 @@ const run = async () => {
   }
   try {
   const response = stack.pourLiquidAndGetCupVolume(volume, row - 1, index - 1)
-  console.log(chalk.green(`On the ${row}th row, on index ${index} column the cup will contain ${response} ML of liquid`))
+  let rowPrefix
+  switch(row) {
+    case 1:
+      rowPrefix = 'st'
+      break
+    case 2:
+      rowPrefix = 'nd'
+      break
+    case 3:
+      rowPrefix = 'rd'
+      break
+    default:
+      rowPrefix = 'th'
+  }
+
+  console.log(chalk.green(`On the ${row}${rowPrefix} row, on column ${index} the cup will contain ${response}ml of liquid`))
   } catch (err ) {
     console.log(err.message)
   }
