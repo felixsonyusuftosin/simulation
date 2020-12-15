@@ -112,6 +112,7 @@ class StackBuilder {
 }
 
 module.exports = {
-  StackBuilder
+  StackBuilder,
+  Glass
 }
 
